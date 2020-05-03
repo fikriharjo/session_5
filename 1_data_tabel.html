@@ -566,14 +566,17 @@
                         // `<button onclick='dataManagement.hapus("${peserta.nama}")'>Delete</button>`;
                         // `<button name='dataManagement' >Delete</button>`;
                         // `<button onclick='alert("jos")'>Delete</button>`;
-                        `<button name='data'>Delete</button>`;
+                        `<button name='data' value="${peserta.nama}">Delete</button>`;
                 }
 
             }
 
         }
-        $('button[name=data]').click(function(){
-            alert('jos');
+        // $('button[name=data]').click(function(){
+        //     alert('jos');
+        // })
+        $(document).on('click', 'button[name=data]', function(isi){
+            dataManagement.hapus(isi.target.value);
         })
 
         let dataManagement = new DataManagement();
